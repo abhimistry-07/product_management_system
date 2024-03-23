@@ -14,7 +14,9 @@
     </thead>
     <tbody *ngFor="let product of allData">
       <tr>
-        <td>{{ product.productName }}</td>
+        <!-- <a [routerLink]="['/product', product.id]" routerLinkActive="active"> -->
+        <td (click)="navigateOnClick(product.id)">{{ product.productName }}</td>
+        <!-- </a> -->
         <td>{{ product.category }}</td>
         <td>{{ product.price }}</td>
       </tr>

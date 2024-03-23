@@ -24,5 +24,12 @@ export class DataService {
     { "id": 14, "productName": "Camera", "price": 900, "category": "Electronics" },
     { "id": 15, "productName": "Coffee Table", "price": 120, "category": "Furniture" }
   ];
-  
+
+  getProductData() {
+    return this.products;
+  }
+
+  getProductDetail(id: number) {
+    return this.products.find((product: any) => product.id === id);
+  }
 }

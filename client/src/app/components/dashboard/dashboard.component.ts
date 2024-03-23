@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +14,7 @@ export class DashboardComponent {
 
   order: string = 'asc'
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private router: Router) {
     this.allData = this.dataService.products;
     // console.log(this.allData);
   }
@@ -41,5 +42,9 @@ export class DashboardComponent {
     } else {
       this.allData = this.dataService.products;
     }
+  }
+
+  navigateOnClick(productID: number) {
+    this.router.navigate(['/product', productID]);
   }
 }
