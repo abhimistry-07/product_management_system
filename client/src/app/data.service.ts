@@ -23,5 +23,6 @@ export class DataService {
     { "id": 13, "productName": "Dining Table", "price": 350, "category": "Furniture" },
     { "id": 14, "productName": "Camera", "price": 900, "category": "Electronics" },
     { "id": 15, "productName": "Coffee Table", "price": 120, "category": "Furniture" }
-  ]
+  ];
+  
 }

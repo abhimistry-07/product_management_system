@@ -1,4 +1,9 @@
 <div class="tableContainer">
+  <label
+    >Search Products:-
+    <input type="text" [(ngModel)]="searchText" (input)="handleInput($event)" />
+  </label>
+
   <table>
     <thead>
       <tr>

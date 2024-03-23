@@ -9,11 +9,13 @@ import { DataService } from 'src/app/data.service';
 export class DashboardComponent {
   allData: any = [];
 
+  searchText: string = '';
+
   order: string = 'asc'
 
   constructor(private dataService: DataService) {
     this.allData = this.dataService.products;
-    console.log(this.allData);
+    // console.log(this.allData);
   }
 
   sortPrice() {
@@ -25,5 +27,19 @@ export class DashboardComponent {
       this.order = 'asc';
     }
     // console.log('clicked');
+  }
+
+  handleInput(event: any) {
+
+    if (this.searchText) {
+      let filtered = this.allData.filter((item: any) => (
+        item.productName.toLowerCase().includes(this.searchText.toLowerCase())
+      ));
+
+      // console.log(filtered);
+      this.allData = filtered;
+    } else {
+      this.allData = this.dataService.products;
+    }
   }
 }
